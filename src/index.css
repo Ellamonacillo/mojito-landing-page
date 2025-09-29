@@ -96,5 +96,30 @@ html, body {
     .right-leaf {
       @apply absolute right-0 md:bottom-0 xl:top-0 2xl:top-12 top-1/2 md:w-fit w-24;
     }
+
+    .body {
+      @apply container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5;
+
+      .content {
+        @apply flex lg:flex-row flex-col w-full gap-10 justify-between items-center lg:items-end mx-auto;
+
+        p:nth-of-type(2) {
+            @apply font-modern-negra text-6xl text-yellow max-w-xl;
+        }
+        p:last-of-type {
+            @apply 2xl:text-start text-center;
+        }
+        .view-cocktails {
+            @apply space-y-5 text-lg lg:max-w-2xs md:max-w-xs w-full;
+
+            p {
+                @apply text-left;
+            }
+            a {
+                @apply font-semibold opacity-80 2xl:text-start text-center hover:text-yellow;
+            }
+        }
+      }
+    }
   }
 }
