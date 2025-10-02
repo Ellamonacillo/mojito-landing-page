@@ -28,7 +28,7 @@ const Contact = () => {
             stagger: 0.2
         })
         .to('#f-right-leaf', {
-            y: '50',
+            y: '-50',
             duration: 1,
             ease: 'power1.inOut'
         })
