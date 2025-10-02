@@ -2,16 +2,15 @@
 
 A modern React landing page built with Vite and powered by GSAP animations for smooth, performant user experiences.
 
+> **Note:** This project is based on a YouTube tutorial. Check out the original tutorial [here](https://www.youtube.com/watch?v=AW1yfBKRMKc) for step-by-step guidance.
+
 ## 📸 Screenshots
 
-![Desktop View](screenshots/desktop-view.png)
+![Desktop View](public/screenshots/desktop-view.png)
 *Desktop view showcasing the main interface*
 
-![Mobile View](screenshots/mobile-view.png)
+![Mobile View](public/screenshots/mobile-view.png)
 *Responsive mobile design*
-
-![Animation Demo](screenshots/animation-demo.gif)
-*GSAP animations in action*
 
 ## 🚀 Features
 
@@ -30,7 +29,7 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/mojito-landing-page.git
+git clone https://github.com/Ellamonacillo/mojito-landing-page.git
 cd mojito-landing-page
 ```
 
@@ -85,22 +84,6 @@ This project uses Tailwind CSS for styling.
 ## 🎭 GSAP Usage
 
 This project includes GSAP for creating smooth, performant animations. 
-
-## 📁 Project Structure
-
-```
-src/
-├── components/          # Reusable UI components
-│   ├── common/         # Common components (Header, Footer, etc.)
-│   └── ui/             # UI-specific components
-├── pages/              # Page components
-├── hooks/              # Custom React hooks
-├── utils/              # Utility functions
-├── assets/             # Static assets (images, fonts, etc.)
-├── styles/             # Global styles and Tailwind configurations
-├── animations/         # GSAP animation configurations
-└── main.jsx           # Application entry point
-```
 
 ## 🔧 Available Scripts
 
