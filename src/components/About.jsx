@@ -1,20 +1,30 @@
+import { useState, useEffect } from 'react';
+
 import gsap from 'gsap';
 import { SplitText } from 'gsap/all';
 import { useGSAP } from '@gsap/react'
 
 const About = () => {
 
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontsLoaded(true)
+    });
+  }, []);
+
   useGSAP(() => {
-    const titleSplit = SplitText.create('#about h2', {
-        type: 'words'
-    })
+    if (!fontsLoaded) return;
+
+    const titleSplit = SplitText.create('#about h2', { type: 'words' });
 
     const scrollTimeline = gsap.timeline({
         scrollTrigger: {
             trigger: '#about',
             start: 'top center'
         }
-    })
+    });
 
     scrollTimeline
         .from(titleSplit.words, {
@@ -29,8 +39,8 @@ const About = () => {
             duration: 1,
             ease: 'power1.inOut',
             stagger: 0.04
-        }, '-=0.05')
-  })
+        }, '-=0.1')
+  }, [fontsLoaded]);
 
   return (
     <div id='about'>

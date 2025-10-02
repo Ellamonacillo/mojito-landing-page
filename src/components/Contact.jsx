@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { SplitText } from 'gsap/all';
@@ -5,9 +7,19 @@ import { openingHours, socials, storeInfo } from '../../constants';
 
 const Contact = () => {
 
-  useGSAP(() => {
-    const titleSplit = SplitText.create('#contact h2', { type: 'words' });
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontsLoaded(true)
+    });
+  }, []);  
+
+  useGSAP(() => {
+    if (!fontsLoaded) return;
+    
+    const titleSplit = SplitText.create('#contact h2', { type: 'words' });
+    
     const timeline = gsap.timeline({
         scrollTrigger: {
             trigger: '#contact',
@@ -37,7 +49,7 @@ const Contact = () => {
             duration: 1,
             ease: 'power1.inOut'
         }, '<')
-  })
+  }, [fontsLoaded]);
     
   return (
     <footer id="contact">
